@@ -2,7 +2,7 @@
 
 Portfolio académico y profesional con proyectos de Maestría en IA, Data Science y MLOps.
 
-🌐 **Website:** https://cesarsanco.github.io
+🌐 **Website:** https://cesarsanco-ai.github.io
 
 ## Estructura
 
