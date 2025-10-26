@@ -1,627 +1,587 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>César Sanco | Data & AI</title>
-    <meta name="description" content="Portfolio académico y profesional de César Sanchez Coronel, entusiasta de la Inteligencia Artificial y Ciencia de Datos.">
+    <meta charset="utf-8">
+    <meta name="description" content="César Sánchez - Ingeniero y Científico de Datos especializado en Machine Learning, IA Generativa y MLOps. Portfolio profesional con proyectos de Data Science y Cloud Computing.">
+    <meta name="keywords" content="César Sánchez, Data Science, Machine Learning, MLOps, IA Generativa, GenAI, Deep Learning, Big Data, Cloud Computing, Python, AWS, Azure, Data Engineer, Lima Peru">
+    <meta name="author" content="César Sánchez Coronel">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="César Sánchez - Data Scientist & ML Engineer">
+    <meta property="og:description" content="Ingeniero y Científico de Datos con experiencia en Machine Learning, IA Generativa y MLOps">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_PE">
+    <title>César Sánchez | Data Scientist & ML Engineer</title>
     
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #2c5aa0;
-            --primary-hover: #1e4278;
-            --text-primary: #333333;
-            --text-secondary: #666666;
-            --bg-gray: #f8f9fa;
-            --border-color: #e0e0e0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background: white;
-        }
-
-        /* Navigation */
-        nav {
-            background: white;
-            padding: 1.2rem 2rem;
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.95);
-        }
-
-        nav .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        /* Hero Section */
-        .hero {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 4rem 2rem 3rem;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .hero .subtitle {
-            font-size: 1.3rem;
-            color: var(--text-secondary);
-            margin-bottom: 0.8rem;
-            font-weight: 400;
-        }
-
-        .hero .affiliation {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-        }
-
-        .affiliation-item {
-            display: inline-block;
-            margin: 0 0.5rem;
-        }
-
-        .affiliation-marker {
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        /* Buttons */
-        .button-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.7rem 1.5rem;
-            background: #333;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.2s;
-        }
-
-        .btn:hover {
-            background: #000;
-            transform: translateY(-1px);
-        }
-
-        /* Highlight Banner */
-        .highlight {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 1.5rem 2rem;
-            background: #fff9e6;
-            border-left: 4px solid #ffc107;
-            border-radius: 4px;
-        }
-
-        .highlight p {
-            color: var(--text-primary);
-            font-size: 1rem;
-            line-height: 1.7;
-        }
-
-        .highlight strong {
-            color: #d84315;
-        }
-
-        /* Main Content */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-
-        section {
-            margin-bottom: 4rem;
-        }
-
-        h2 {
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        /* About Section */
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-        }
-
-        .about-content p {
-            margin-bottom: 1rem;
-        }
-
-        /* Featured Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .project-card {
-            background: white;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        .project-card:hover {
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            transform: translateY(-4px);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 180px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .project-description {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .project-meta {
-            font-size: 0.85rem;
-            color: var(--primary);
-            font-weight: 500;
-        }
-
-        /* Education Timeline */
-        .timeline {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .timeline-item {
-            border-left: 2px solid var(--border-color);
-            padding-left: 2rem;
-            padding-bottom: 2rem;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
-            width: 12px;
-            height: 12px;
-            background: var(--primary);
-            border-radius: 50%;
-            position: absolute;
-            left: -7px;
-            top: 0;
-        }
-
-        .timeline-item:last-child {
-            padding-bottom: 0;
-        }
-
-        .timeline-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.3rem;
-        }
-
-        .timeline-institution {
-            font-size: 0.95rem;
-            color: var(--primary);
-            margin-bottom: 0.3rem;
-        }
-
-        .timeline-period {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .skill-category {
-            background: var(--bg-gray);
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
-
-        .skill-category h3 {
-            font-size: 1.1rem;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-tag {
-            background: white;
-            color: var(--text-secondary);
-            padding: 0.4rem 0.9rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            border: 1px solid var(--border-color);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--bg-gray);
-            padding: 3rem 2rem;
-            text-align: center;
-            margin-top: 4rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        footer p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.1rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
 </head>
+
+<style>
+.expandable-card .card-text-container {
+    max-height: 200px;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.expandable-card.expanded .card-text-container {
+    max-height: none;
+}
+
+.expand-btn {
+    position: relative;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #510c75;
+    border-color: transparent;
+}
+
+.expand-btn:hover {
+    background-color: rgba(200, 200, 200, 0.8);
+    text-decoration: none;
+    border-color: transparent;
+    color: #510c75;
+}
+
+.expand-btn:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+.expandable-card:not(.expanded) .card-text-container:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 1));
+}
+
+.expandable-card:not(.expanded) .expand-btn {
+    margin-top: -40px;
+}
+
+.card-body {
+    padding-bottom: 5px;
+}
+
+.vertical-flex-layout {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.figure-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.adjustable-font-size {
+    font-size: calc(0.5rem + 2vw);
+}
+
+/* Estilos para los bloques de educación */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.education-block {
+    background: white;
+    border: 2px solid #dbdbdb;
+    border-radius: 8px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.education-block:hover {
+    border-color: #3273dc;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+}
+
+.education-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.education-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #363636;
+    margin-bottom: 0.5rem;
+}
+
+.education-subtitle {
+    font-size: 0.95rem;
+    color: #7a7a7a;
+}
+
+/* Estilos para la sección de experiencia en bloques */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.experience-block {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.experience-block:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+}
+
+.experience-block-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #363636;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.experience-subsection {
+    margin-bottom: 1.5rem;
+}
+
+.experience-subsection:last-child {
+    margin-bottom: 0;
+}
+
+.experience-subtitle {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #4a4a4a;
+    margin-bottom: 0.75rem;
+    text-align: left;
+}
+
+.experience-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.experience-tag {
+    background: white;
+    color: #4a4a4a;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    border: 1px solid #e0e0e0;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.experience-tag:hover {
+    border-color: #3273dc;
+    color: #3273dc;
+    transform: translateY(-1px);
+}
+</style>
+
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <a href="/" class="logo">César Sanco</a>
-            <ul class="nav-links">
-                <li><a href="#about">Acerca</a></li>
-                <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#education">Educación</a></li>
-                <li><a href="/blog">Blog</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
+    <!-- Hero Section - NO TOCAR -->
     <section class="hero">
-        <h1>César Sanco</h1>
-        <p class="subtitle">AI/ML Engineer & Data Scientist</p>
-        <p class="affiliation">
-            <span class="affiliation-item">
-                <span class="affiliation-marker">▸</span> Maestría en Inteligencia Artificial
-            </span>
-            <span class="affiliation-item">
-                <span class="affiliation-marker">▸</span> Especialista en Deep Learning & MLOps
-            </span>
-        </p>
-
-        <div class="button-group">
-            <a href="https://github.com/cesarsanco" class="btn">
-                <span>⌘</span> GitHub
-            </a>
-            <a href="https://linkedin.com/in/cesarsanco" class="btn">
-                <span>⚡</span> LinkedIn
-            </a>
-            <a href="/educacion" class="btn">
-                <span>📚</span> Educación
-            </a>
-            
-            <a href="https://cesarsanco-ai.github.io/intracranial-aneurysm-detector/" class="btn" target="_blank">
-                <span>📚</span> Proyecto Aneurysm
-            </a>
-
-            <a href="mailto:cesar.sanco@example.com" class="btn">
-                <span>✉</span> Contacto
-            </a>
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">Sánchez Coronel Carlos César</h1>
+                        <h3 class="title is-3 publication-title">Ingeniero y Científico</h3>
+                        <h5 class="subtitle is-5 publication-awards">Data & AI</h5>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a href="#" style="color:#008AD7;font-weight:normal;">Data Science</a>,
+                            </span>
+                            <span class="author-block">
+                                <a href="#" style="color:#008AD7;font-weight:normal;">GenAI</a>,
+                            </span>
+                            <span class="author-block">
+                                <a href="#" style="color:#008AD7;font-weight:normal;">MLOps</a>,
+                            </span>
+                            <span class="author-block">
+                                <a href="#" style="color:#008AD7;font-weight:normal;">Cloud</a>
+                            </span>
+                        </div>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><b style="color:#f68946; font-weight:normal">&#x25B6; </b>Universidad Nacional de Ingeniería</span>
+                            <span class="author-block"><b style="color:#008AD7; font-weight:normal">&#x25B6; </b>URP</span>
+                            <span class="author-block"><b style="color:#F2A900; font-weight:normal">&#x25B6; </b>TECSUP</span>
+                        </div>
+                        <div class="is-size-6 publication-authors">
+                            <span class="author-block">Lima, Peru 🇵🇪</span>
+                        </div>
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <span class="link-block">
+                                    <a href="https://www.linkedin.com/in/cesar-sanchez-c/" target="_blank" 
+                                       class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-linkedin"></i>
+                                        </span>
+                                        <span>LinkedIn</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="https://github.com/cesarsanco-ai" target="_blank" 
+                                       class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>GitHub</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Highlight Banner -->
-    <div class="highlight">
-        <p>
-            <strong>[Reciente]</strong> Nuevo proyecto publicado: Clasificación de imágenes con CNNs 
-            utilizando Transfer Learning. Implementación de ResNet50 alcanzando 94.2% de precisión. 
-            Trabajo presentado en el curso de Deep Learning, Maestría en IA. 
-            <a href="/educacion/postgrado/maestria-ia/deep-learning/trabajo-2" style="color: #2c5aa0; font-weight: 600;">Ver proyecto →</a>
-        </p>
-    </div>
-
-    <!-- Main Content -->
-    <div class="container">
-        <!-- About Section -->
-        <section id="about">
-            <h2>Acerca de mí</h2>
-            <div class="about-content">
-                <p>
-                    Ingeniero especializado en Inteligencia Artificial y Ciencia de Datos con formación 
-                    en Computación, Física y Matemáticas. Actualmente cursando una Maestría en 
-                    Inteligencia Artificial, enfocado en Deep Learning, Computer Vision y MLOps.
-                </p>
-                <p>
-                    Mi trabajo combina fundamentos teóricos sólidos con aplicaciones prácticas, 
-                    desarrollando soluciones de Machine Learning end-to-end desde la investigación 
-                    hasta el despliegue en producción.
-                </p>
-                <p>
-                    He completado bootcamps especializados en DevOps, Data Science y Full Stack Development, 
-                    además de diplomados en MLOps y Data Analytics. Mi enfoque está en crear sistemas 
-                    de IA escalables, reproducibles y con impacto real.
-                </p>
+    <!-- Teaser Section - Fondo blanco -->
+    <section class="hero teaser">
+        <div class="container is-max-desktop">
+            <div class="hero-body">
+                <h4 class="subtitle has-text-centered">
+                    🔥<span style="color: #ff3860">[HELLO THERE!]</span> Welcome to my personal space, I am a data scientist and machine learning engineer with over 3 years of experience and a background in physics and electrical engineering.
+                    <br><br>
+                    I enjoy working with data, machine learning, web programming and electrical engineering. I am excited about new discoveries in the area of artificial intelligence and always willing to collaborate in interesting projects 🚀.
+                </h4>
             </div>
-        </section>
-
-        <!-- Featured Projects -->
-        <section id="projects">
-            <h2>Proyectos Destacados</h2>
-            <div class="projects-grid">
-                <a href="/educacion/postgrado/maestria-ia/deep-learning/trabajo-2" class="project-card">
-                    <div class="project-image">🧠</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Clasificación de Imágenes con CNNs</h3>
-                        <p class="project-description">
-                            Implementación de Transfer Learning con ResNet50 para clasificación 
-                            multi-clase. Precisión del 94.2% usando técnicas de data augmentation 
-                            y fine-tuning.
-                        </p>
-                        <p class="project-meta">Deep Learning • Computer Vision • PyTorch</p>
-                    </div>
-                </a>
-
-                <a href="/educacion/postgrado/maestria-ia/big-data/trabajo-1" class="project-card">
-                    <div class="project-image">📊</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Análisis de Big Data con Spark</h3>
-                        <p class="project-description">
-                            Pipeline de procesamiento distribuido para análisis de datasets masivos. 
-                            Implementación de algoritmos de clustering y visualización interactiva.
-                        </p>
-                        <p class="project-meta">Big Data • Apache Spark • Python</p>
-                    </div>
-                </a>
-
-                <a href="/proyectos/genai-assistant" class="project-card">
-                    <div class="project-image">✨</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Asistente con IA Generativa</h3>
-                        <p class="project-description">
-                            Sistema de procesamiento de lenguaje natural usando LLMs. 
-                            Integración de RAG para respuestas contextuales basadas en documentos.
-                        </p>
-                        <p class="project-meta">Gen AI • LLMs • LangChain</p>
-                    </div>
-                </a>
-
-                <a href="/proyectos/mlops-pipeline" class="project-card">
-                    <div class="project-image">⚙️</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Pipeline MLOps Production-Ready</h3>
-                        <p class="project-description">
-                            Sistema completo de CI/CD para modelos de ML. Incluye monitoring, 
-                            versionado de modelos, y deployment automatizado en cloud.
-                        </p>
-                        <p class="project-meta">MLOps • Docker • Kubernetes • AWS</p>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <!-- Education -->
-        <section id="education">
-            <h2>Formación Académica</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3 class="timeline-title">Maestría en Inteligencia Artificial</h3>
-                    <p class="timeline-institution">Universidad (En curso)</p>
-                    <p class="timeline-period">2024 - Presente</p>
-                </div>
-
-                <div class="timeline-item">
-                    <h3 class="timeline-title">Diplomado en MLOps</h3>
-                    <p class="timeline-institution">Universidad Nacional de Ingeniería (UNI)</p>
-                    <p class="timeline-period">2024</p>
-                </div>
-
-                <div class="timeline-item">
-                    <h3 class="timeline-title">Diplomado en Data Analytics</h3>
-                    <p class="timeline-institution">Universidad Nacional de Ingeniería (UNI)</p>
-                    <p class="timeline-period">2024</p>
-                </div>
-
-                <div class="timeline-item">
-                    <h3 class="timeline-title">Bootcamp Data Science</h3>
-                    <p class="timeline-institution">TECSUP</p>
-                    <p class="timeline-period">2023</p>
-                </div>
-
-                <div class="timeline-item">
-                    <h3 class="timeline-title">Ingeniería</h3>
-                    <p class="timeline-institution">Múltiples especializaciones: Computación, Física, Matemática</p>
-                    <p class="timeline-period">Completado</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills -->
-        <section id="skills">
-            <h2>Habilidades Técnicas</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Machine Learning & AI</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Deep Learning</span>
-                        <span class="skill-tag">Computer Vision</span>
-                        <span class="skill-tag">NLP</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">Scikit-learn</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Data Engineering & Big Data</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Apache Spark</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">ETL Pipelines</span>
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">NumPy</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>MLOps & Cloud</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Kubernetes</span>
-                        <span class="skill-tag">CI/CD</span>
-                        <span class="skill-tag">AWS</span>
-                        <span class="skill-tag">MLflow</span>
-                        <span class="skill-tag">Git</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Desarrollo</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">FastAPI</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-links">
-            <a href="/educacion">Educación Completa</a>
-            <a href="/proyectos">Todos los Proyectos</a>
-            <a href="/blog">Blog Técnico</a>
-            <a href="/cv.pdf">Descargar CV</a>
         </div>
-        <p>&copy; 2025 César Sanco. Sitio web adaptado de proyectos académicos de investigación.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.85rem;">
-            Construido con HTML, CSS y JavaScript
-        </p>
-    </footer>
+    </section>
+
+    <!-- Abstract Section - Fondo gris -->
+    <section class="section" style="background-color:#efeff081">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-six-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            I am passionate about the fields of technology, engineering, and applied sciences. I am an engineer with experience in developing machine learning models, data analysis, and deploying cloud-based solutions. I am particularly enthusiastic about the following areas:
+                        </p>
+                        <ol type="1">
+                            <li><b>Artificial Intelligence</b>. <span style="font-size: 95%;">Development of end-to-end solutions using language models, natural language processing, and recommendation systems with state-of-the-art techniques.</span></li>
+                            <li><b>Data Science</b>. <span style="font-size: 95%;">Exploratory data analysis, complex information visualization, and generation of actionable insights for data-driven decision-making.</span></li>
+                            <li><b>Machine Learning & MLOps</b>. <span style="font-size: 95%;">Implementation of ML pipelines in production, from training to deployment, including continuous monitoring and model versioning.</span></li>
+                            <li><b>Cloud & DevOps</b>. <span style="font-size: 95%;">Deployment of scalable solutions on AWS, Azure, and GCP using containers, orchestration, and CI/CD best practices.</span></li>
+                        </ol>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiencia Laboral Section - Fondo blanco -->
+    <section class="section">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-six-fifths">
+                <h2 class="title is-3">
+                    <img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/3281/3281289.png"> 
+                    Work Experience
+                </h2>
+                <p style="margin-bottom: 3rem; font-size: 1.05rem; color: #666;">
+                    I have developed end-to-end projects using the following technologies:
+                </p>
+            </div>
+        </div>
+        
+        <div class="container is-max-desktop">
+            <!-- Grid de bloques de experiencia -->
+            <div class="experience-grid">
+                
+                <!-- Bloque 1: AI & Machine Learning -->
+                <div class="experience-block">
+                    <h3 class="experience-block-title">
+                        🤖 Artificial Intelligence & Machine Learning
+                    </h3>
+                    
+                    <div class="experience-subsection">
+                        <h4 class="experience-subtitle">AI Technologies</h4>
+                        <div class="experience-tags">
+                            <span class="experience-tag">NLP</span>
+                            <span class="experience-tag">LLM</span>
+                            <span class="experience-tag">LangChain</span>
+                            <span class="experience-tag">LangGraph</span>
+                            <span class="experience-tag">Hugging Face</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-subsection">
+                        <h4 class="experience-subtitle">Frameworks & Libraries</h4>
+                        <div class="experience-tags">
+                            <span class="experience-tag">PyTorch</span>
+                            <span class="experience-tag">TensorFlow</span>
+                            <span class="experience-tag">Keras</span>
+                            <span class="experience-tag">Scikit-learn</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-subsection">
+                        <h4 class="experience-subtitle">Model Types</h4>
+                        <div class="experience-tags">
+                            <span class="experience-tag">Supervised Models</span>
+                            <span class="experience-tag">Unsupervised Models</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 2: Data Engineering -->
+                <div class="experience-block">
+                    <h3 class="experience-block-title">
+                        ⚙️ Data Engineering
+                    </h3>
+                    
+                    <div class="experience-subsection">
+                        <h4 class="experience-subtitle">Data Processing</h4>
+                        <div class="experience-tags">
+                            <span class="experience-tag">Web Scraping</span>
+                            <span class="experience-tag">ETL</span>
+                            <span class="experience-tag">Airflow</span>
+                            <span class="experience-tag">PySpark</span>
+                            <span class="experience-tag">Pandas</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-subsection">
+                        <h4 class="experience-subtitle">Data Architectures</h4>
+                        <div class="experience-tags">
+                            <span class="experience-tag">Data Warehouses</span>
+                            <span class="experience-tag">Lakehouse</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 3: Data Analytics & Visualization -->
+                <div class="experience-block">
+                    <h3 class="experience-block-title">
+                        📊 Data Analytics & Visualization
+                    </h3>
+                    
+                    <div class="experience-subsection">
+                        <div class="experience-tags">
+                            <span class="experience-tag">Python</span>
+                            <span class="experience-tag">SQL</span>
+                            <span class="experience-tag">Pandas</span>
+                            <span class="experience-tag">NumPy</span>
+                            <span class="experience-tag">Power BI</span>
+                            <span class="experience-tag">Tableau</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 4: MLOps & Cloud -->
+                <div class="experience-block">
+                    <h3 class="experience-block-title">
+                        🔧 MLOps & Cloud
+                    </h3>
+                    
+                    <div class="experience-subsection">
+                        <h4 class="experience-subtitle">Cloud Platforms</h4>
+                        <div class="experience-tags">
+                            <span class="experience-tag">AWS</span>
+                            <span class="experience-tag">Azure</span>
+                            <span class="experience-tag">GCP</span>
+                            <span class="experience-tag">Databricks</span>
+                            <span class="experience-tag">Microsoft Fabric</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-subsection">
+                        <h4 class="experience-subtitle">Containers & Orchestration</h4>
+                        <div class="experience-tags">
+                            <span class="experience-tag">Docker</span>
+                            <span class="experience-tag">Kubernetes</span>
+                            <span class="experience-tag">Terraform</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-subsection">
+                        <h4 class="experience-subtitle">Model Management</h4>
+                        <div class="experience-tags">
+                            <span class="experience-tag">MLflow</span>
+                            <span class="experience-tag">Grafana</span>
+                            <span class="experience-tag">MLOps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 5: Full Stack Development -->
+                <div class="experience-block">
+                    <h3 class="experience-block-title">
+                        💻 Full Stack Development
+                    </h3>
+                    
+                    <div class="experience-subsection">
+                        <h4 class="experience-subtitle">Frontend</h4>
+                        <div class="experience-tags">
+                            <span class="experience-tag">HTML, CSS</span>
+                            <span class="experience-tag">JavaScript</span>
+                            <span class="experience-tag">Tailwind CSS</span>
+                            <span class="experience-tag">React</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-subsection">
+                        <h4 class="experience-subtitle">Backend & APIs</h4>
+                        <div class="experience-tags">
+                            <span class="experience-tag">Python</span>
+                            <span class="experience-tag">FastAPI</span>
+                            <span class="experience-tag">Flask</span>
+                            <span class="experience-tag">Node.js</span>
+                            <span class="experience-tag">Express</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-subsection">
+                        <h4 class="experience-subtitle">Databases</h4>
+                        <div class="experience-tags">
+                            <span class="experience-tag">PostgreSQL</span>
+                            <span class="experience-tag">MySQL</span>
+                            <span class="experience-tag">MongoDB</span>
+                            <span class="experience-tag">SQL Server</span>
+                            <span class="experience-tag">Neo4j</span>
+                            <span class="experience-tag">ElasticSearch</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 6: Automation -->
+                <div class="experience-block">
+                    <h3 class="experience-block-title">
+                        🔄 Automation
+                    </h3>
+                    
+                    <div class="experience-subsection">
+                        <div class="experience-tags">
+                            <span class="experience-tag">NodeRED</span>
+                            <span class="experience-tag">Power Automate</span>
+                            <span class="experience-tag">N8N</span>
+                            <span class="experience-tag">Scripting</span>
+                            <span class="experience-tag">Web Scraping</span>
+                            <span class="experience-tag">LLM APIs</span>
+                            <span class="experience-tag">C/C++</span>
+                            <span class="experience-tag">Linux</span>
+                            <span class="experience-tag">Github Actions</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Educación Section - Fondo gris -->
+    <section class="section" style="background-color:#efeff081">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-six-fifths">
+                    <h2 class="title is-3">
+                        <img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/3976/3976625.png"> 
+                        Education
+                    </h2>
+                    
+                    <div class="education-grid">
+                        <a href="/education/undergraduate" class="education-block">
+                            <div class="education-icon">🎓</div>
+                            <div class="education-title">Undergraduate</div>
+                            <div class="education-subtitle">Engineering | Physics | Mathematics</div>
+                        </a>
+
+                        <a href="/education/continuing" class="education-block">
+                            <div class="education-icon">📚</div>
+                            <div class="education-title">Continuing Education</div>
+                            <div class="education-subtitle">Bootcamps | Diplomas | Certifications</div>
+                        </a>
+
+                        <a href="/education/postgraduate" class="education-block">
+                            <div class="education-icon">🎯</div>
+                            <div class="education-title">Postgraduate</div>
+                            <div class="education-subtitle">Master’s Degree in Artificial Intelligence</div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section - Fondo blanco -->
+    <!-- MODIFICAR ALTURA: Cambia padding en la línea siguiente (actualmente 6rem 2rem) -->
+    <section class="section" style="padding: 6rem 2rem; min-height: 60vh; display: flex; align-items: center;">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-six-fifths">
+                    <!-- MODIFICAR TAMAÑO TÍTULO: Cambia font-size aquí (actualmente 3rem) -->
+                    <h2 style="font-size: 3rem; font-weight: 700; margin-bottom: 2rem; color: #363636;">
+                        <strong>Let's have a beer 🍺!</strong>
+
+                    </h2>
+                    
+                    <!-- MODIFICAR TAMAÑO ICONO EMAIL: Cambia font-size aquí (actualmente 4rem) -->
+                    <div style="margin: 3rem 0;">
+                        <a href="https://www.linkedin.com/in/cesar-sanchez-c/" style="text-decoration: none;">
+                            <i class="fas fa-envelope" style="font-size: 4rem; color: #363636;"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- MODIFICAR ESPACIO ANTES DE ICONOS: Cambia margin-top aquí (actualmente 5rem) -->
+                    <!-- MODIFICAR TAMAÑO CÍRCULOS: Cambia width/height en .social-icon (actualmente 45px) -->
+                    <div style="margin-top: 5rem; margin-bottom: 2rem;">
+                        <a href="https://www.linkedin.com/in/cesar-sanchez-c/" target="_blank" class="social-icon" style="display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: #000; border-radius: 50%; margin: 0 0.5rem; text-decoration: none; transition: transform 0.2s;">
+                            <i class="fab fa-linkedin-in" style="color: white; font-size: 1.2rem;"></i>
+                        </a>
+                        <a href="https://github.com/cesarsanco-ai" target="_blank" class="social-icon" style="display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: #000; border-radius: 50%; margin: 0 0.5rem; text-decoration: none; transition: transform 0.2s;">
+                            <i class="fab fa-github" style="color: white; font-size: 1.2rem;"></i>
+                        </a>
+  
+ 
+                    </div>
+                    
+                    <!-- MODIFICAR TAMAÑO TEXTO COPYRIGHT: Cambia font-size aquí (actualmente 0.95rem) -->
+                    <p style="color: #7a7a7a; font-size: 0.95rem; margin-top: 1.5rem;">
+                        © 2025 Carlos César Sánchez Coronel | Lima, Perú 🇵🇪
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+    /* Efecto hover para iconos sociales */
+    .social-icon:hover {
+        transform: translateY(-3px);
+        opacity: 0.8;
+    }
+    </style>
+
 </body>
 </html>
