@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="César Sánchez - Ingeniero y Científico de Datos especializado en Machine Learning, IA Generativa y MLOps. Portfolio profesional con proyectos de Data Science y Cloud Computing.">
-    <meta name="keywords" content="César Sánchez, Data Science, Machine Learning, MLOps, IA Generativa, GenAI, Deep Learning, Big Data, Cloud Computing, Python, AWS, Azure, Data Engineer, Lima Peru">
+    <meta name="description"
+        content="César Sánchez - Ingeniero y Científico de Datos especializado en Machine Learning, IA Generativa y MLOps. Portfolio profesional con proyectos de Data Science y Cloud Computing.">
+    <meta name="keywords"
+        content="César Sánchez, Data Science, Machine Learning, MLOps, IA Generativa, GenAI, Deep Learning, Big Data, Cloud Computing, Python, AWS, Azure, Data Engineer, Lima Peru">
     <meta name="author" content="César Sánchez Coronel">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:title" content="César Sánchez - Data Scientist & ML Engineer">
-    <meta property="og:description" content="Ingeniero y Científico de Datos con experiencia en Machine Learning, IA Generativa y MLOps">
+    <meta property="og:description"
+        content="Ingeniero y Científico de Datos con experiencia en Machine Learning, IA Generativa y MLOps">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_PE">
     <title>César Sánchez | Data Scientist & ML Engineer</title>
-    
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -20,188 +24,188 @@
     <link rel="stylesheet" href="./static/css/index.css">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
 </head>
 
 <style>
-.expandable-card .card-text-container {
-    max-height: 200px;
-    overflow-y: hidden;
-    position: relative;
-}
+    .expandable-card .card-text-container {
+        max-height: 200px;
+        overflow-y: hidden;
+        position: relative;
+    }
 
-.expandable-card.expanded .card-text-container {
-    max-height: none;
-}
+    .expandable-card.expanded .card-text-container {
+        max-height: none;
+    }
 
-.expand-btn {
-    position: relative;
-    display: none;
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #510c75;
-    border-color: transparent;
-}
+    .expand-btn {
+        position: relative;
+        display: none;
+        background-color: rgba(255, 255, 255, 0.8);
+        color: #510c75;
+        border-color: transparent;
+    }
 
-.expand-btn:hover {
-    background-color: rgba(200, 200, 200, 0.8);
-    text-decoration: none;
-    border-color: transparent;
-    color: #510c75;
-}
+    .expand-btn:hover {
+        background-color: rgba(200, 200, 200, 0.8);
+        text-decoration: none;
+        border-color: transparent;
+        color: #510c75;
+    }
 
-.expand-btn:focus {
-    outline: none;
-    text-decoration: none;
-}
+    .expand-btn:focus {
+        outline: none;
+        text-decoration: none;
+    }
 
-.expandable-card:not(.expanded) .card-text-container:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 90px;
-    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 1));
-}
+    .expandable-card:not(.expanded) .card-text-container:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 90px;
+        background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 1));
+    }
 
-.expandable-card:not(.expanded) .expand-btn {
-    margin-top: -40px;
-}
+    .expandable-card:not(.expanded) .expand-btn {
+        margin-top: -40px;
+    }
 
-.card-body {
-    padding-bottom: 5px;
-}
+    .card-body {
+        padding-bottom: 5px;
+    }
 
-.vertical-flex-layout {
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
+    .vertical-flex-layout {
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
 
-.figure-img {
-    max-width: 100%;
-    height: auto;
-}
+    .figure-img {
+        max-width: 100%;
+        height: auto;
+    }
 
-.adjustable-font-size {
-    font-size: calc(0.5rem + 2vw);
-}
+    .adjustable-font-size {
+        font-size: calc(0.5rem + 2vw);
+    }
 
-/* Estilos para los bloques de educación */
-.education-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
+    /* Estilos para los bloques de educación */
+    .education-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
 
-.education-block {
-    background: white;
-    border: 2px solid #dbdbdb;
-    border-radius: 8px;
-    padding: 2.5rem 2rem;
-    text-align: center;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
+    .education-block {
+        background: white;
+        border: 2px solid #dbdbdb;
+        border-radius: 8px;
+        padding: 2.5rem 2rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
 
-.education-block:hover {
-    border-color: #3273dc;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transform: translateY(-4px);
-}
+    .education-block:hover {
+        border-color: #3273dc;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transform: translateY(-4px);
+    }
 
-.education-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
+    .education-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
 
-.education-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #363636;
-    margin-bottom: 0.5rem;
-}
+    .education-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #363636;
+        margin-bottom: 0.5rem;
+    }
 
-.education-subtitle {
-    font-size: 0.95rem;
-    color: #7a7a7a;
-}
+    .education-subtitle {
+        font-size: 0.95rem;
+        color: #7a7a7a;
+    }
 
-/* Estilos para la sección de experiencia en bloques */
-.experience-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
+    /* Estilos para la sección de experiencia en bloques */
+    .experience-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
 
-.experience-block {
-    background: #f8f9fa;
-    border-radius: 12px;
-    padding: 2rem;
-    transition: all 0.3s ease;
-}
+    .experience-block {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+    }
 
-.experience-block:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transform: translateY(-2px);
-}
+    .experience-block:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transform: translateY(-2px);
+    }
 
-.experience-block-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #363636;
-    margin-bottom: 1.5rem;
-    text-align: left;
-}
+    .experience-block-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #363636;
+        margin-bottom: 1.5rem;
+        text-align: left;
+    }
 
-.experience-subsection {
-    margin-bottom: 1.5rem;
-}
+    .experience-subsection {
+        margin-bottom: 1.5rem;
+    }
 
-.experience-subsection:last-child {
-    margin-bottom: 0;
-}
+    .experience-subsection:last-child {
+        margin-bottom: 0;
+    }
 
-.experience-subtitle {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #4a4a4a;
-    margin-bottom: 0.75rem;
-    text-align: left;
-}
+    .experience-subtitle {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #4a4a4a;
+        margin-bottom: 0.75rem;
+        text-align: left;
+    }
 
-.experience-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
+    .experience-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
 
-.experience-tag {
-    background: white;
-    color: #4a4a4a;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.875rem;
-    border: 1px solid #e0e0e0;
-    transition: all 0.2s ease;
-    font-weight: 500;
-}
+    .experience-tag {
+        background: white;
+        color: #4a4a4a;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        border: 1px solid #e0e0e0;
+        transition: all 0.2s ease;
+        font-weight: 500;
+    }
 
-.experience-tag:hover {
-    border-color: #3273dc;
-    color: #3273dc;
-    transform: translateY(-1px);
-}
+    .experience-tag:hover {
+        border-color: #3273dc;
+        color: #3273dc;
+        transform: translateY(-1px);
+    }
 </style>
 
 <body>
@@ -229,9 +233,12 @@
                             </span>
                         </div>
                         <div class="is-size-5 publication-authors">
-                            <span class="author-block"><b style="color:#f68946; font-weight:normal">&#x25B6; </b>UNIVERSIDAD NACIONAL DE INGENIERÍA</span>
-                            <span class="author-block"><b style="color:#008AD7; font-weight:normal">&#x25B6; </b>URP</span>
-                            <span class="author-block"><b style="color:#F2A900; font-weight:normal">&#x25B6; </b>TECSUP</span>
+                            <span class="author-block"><b style="color:#f68946; font-weight:normal">&#x25B6;
+                                </b>UNIVERSIDAD NACIONAL DE INGENIERÍA</span>
+                            <span class="author-block"><b style="color:#008AD7; font-weight:normal">&#x25B6;
+                                </b>URP</span>
+                            <span class="author-block"><b style="color:#F2A900; font-weight:normal">&#x25B6;
+                                </b>TECSUP</span>
                         </div>
                         <div class="is-size-6 publication-authors">
                             <span class="author-block">Lima, Peru 🇵🇪</span>
@@ -239,8 +246,8 @@
                         <div class="column has-text-centered">
                             <div class="publication-links">
                                 <span class="link-block">
-                                    <a href="https://www.linkedin.com/in/cesar-sanchez-c/" target="_blank" 
-                                       class="external-link button is-normal is-rounded is-dark">
+                                    <a href="https://www.linkedin.com/in/cesar-sanchez-c/" target="_blank"
+                                        class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fab fa-linkedin"></i>
                                         </span>
@@ -248,8 +255,8 @@
                                     </a>
                                 </span>
                                 <span class="link-block">
-                                    <a href="https://github.com/cesarsanco-ai" target="_blank" 
-                                       class="external-link button is-normal is-rounded is-dark">
+                                    <a href="https://github.com/cesarsanco-ai" target="_blank"
+                                        class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fab fa-github"></i>
                                         </span>
@@ -269,9 +276,13 @@
         <div class="container is-max-desktop">
             <div class="hero-body">
                 <h4 class="subtitle has-text-centered">
-                    🔥<span style="color: #ff3860">[HELLO THERE!]</span> Welcome to my personal space, I am a data scientist and machine learning engineer with over 3 years of experience and a background in physics and electrical engineering.
+                    🔥<span style="color: #ff3860">[HELLO THERE!]</span> Welcome to my personal space, I am a data
+                    scientist and machine learning engineer with over 3 years of experience and a background in physics
+                    and electrical engineering.
                     <br><br>
-                    I enjoy working with data, machine learning, web programming and electrical engineering. I am excited about new discoveries in the area of artificial intelligence and always willing to collaborate in interesting projects 🚀.
+                    I enjoy working with data, machine learning, web programming and electrical engineering. I am
+                    excited about new discoveries in the area of artificial intelligence and always willing to
+                    collaborate in interesting projects 🚀.
                 </h4>
             </div>
         </div>
@@ -285,13 +296,23 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            I am passionate about the fields of technology, engineering, and applied sciences. I am an engineer with experience in developing machine learning models, data analysis, and deploying cloud-based solutions. I am particularly enthusiastic about the following areas:
+                            I am passionate about the fields of technology, engineering, and applied sciences. I am an
+                            engineer with experience in developing machine learning models, data analysis, and deploying
+                            cloud-based solutions. I am particularly enthusiastic about the following areas:
                         </p>
                         <ol type="1">
-                            <li><b>Artificial Intelligence</b>. <span style="font-size: 95%;">Development of end-to-end solutions using language models, natural language processing, and recommendation systems with state-of-the-art techniques.</span></li>
-                            <li><b>Data Science</b>. <span style="font-size: 95%;">Exploratory data analysis, complex information visualization, and generation of actionable insights for data-driven decision-making.</span></li>
-                            <li><b>Machine Learning & MLOps</b>. <span style="font-size: 95%;">Implementation of ML pipelines in production, from training to deployment, including continuous monitoring and model versioning.</span></li>
-                            <li><b>Cloud & DevOps</b>. <span style="font-size: 95%;">Deployment of scalable solutions on AWS, Azure, and GCP using containers, orchestration, and CI/CD best practices.</span></li>
+                            <li><b>Artificial Intelligence</b>. <span style="font-size: 95%;">Development of end-to-end
+                                    solutions using language models, natural language processing, and recommendation
+                                    systems with state-of-the-art techniques.</span></li>
+                            <li><b>Data Science</b>. <span style="font-size: 95%;">Exploratory data analysis, complex
+                                    information visualization, and generation of actionable insights for data-driven
+                                    decision-making.</span></li>
+                            <li><b>Machine Learning & MLOps</b>. <span style="font-size: 95%;">Implementation of ML
+                                    pipelines in production, from training to deployment, including continuous
+                                    monitoring and model versioning.</span></li>
+                            <li><b>Cloud & DevOps</b>. <span style="font-size: 95%;">Deployment of scalable solutions on
+                                    AWS, Azure, and GCP using containers, orchestration, and CI/CD best
+                                    practices.</span></li>
                         </ol>
 
                     </div>
@@ -305,7 +326,7 @@
         <div class="columns is-centered has-text-centered">
             <div class="column is-six-fifths">
                 <h2 class="title is-3">
-                    <img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/3281/3281289.png"> 
+                    <img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/3281/3281289.png">
                     Work Experience
                 </h2>
                 <p style="margin-bottom: 3rem; font-size: 1.05rem; color: #666;">
@@ -313,17 +334,17 @@
                 </p>
             </div>
         </div>
-        
+
         <div class="container is-max-desktop">
             <!-- Grid de bloques de experiencia -->
             <div class="experience-grid">
-                
+
                 <!-- Bloque 1: AI & Machine Learning -->
                 <div class="experience-block">
                     <h3 class="experience-block-title">
                         🤖 Artificial Intelligence & Machine Learning
                     </h3>
-                    
+
                     <div class="experience-subsection">
                         <h4 class="experience-subtitle">AI Technologies</h4>
                         <div class="experience-tags">
@@ -359,7 +380,7 @@
                     <h3 class="experience-block-title">
                         ⚙️ Data Engineering
                     </h3>
-                    
+
                     <div class="experience-subsection">
                         <h4 class="experience-subtitle">Data Processing</h4>
                         <div class="experience-tags">
@@ -385,7 +406,7 @@
                     <h3 class="experience-block-title">
                         📊 Data Analytics & Visualization
                     </h3>
-                    
+
                     <div class="experience-subsection">
                         <div class="experience-tags">
                             <span class="experience-tag">Python</span>
@@ -403,7 +424,7 @@
                     <h3 class="experience-block-title">
                         🔧 MLOps & Cloud
                     </h3>
-                    
+
                     <div class="experience-subsection">
                         <h4 class="experience-subtitle">Cloud Platforms</h4>
                         <div class="experience-tags">
@@ -439,7 +460,7 @@
                     <h3 class="experience-block-title">
                         💻 Full Stack Development
                     </h3>
-                    
+
                     <div class="experience-subsection">
                         <h4 class="experience-subtitle">Frontend</h4>
                         <div class="experience-tags">
@@ -479,7 +500,7 @@
                     <h3 class="experience-block-title">
                         🔄 Automation
                     </h3>
-                    
+
                     <div class="experience-subsection">
                         <div class="experience-tags">
                             <span class="experience-tag">NodeRED</span>
@@ -499,40 +520,48 @@
         </div>
     </section>
 
+
     <!-- Educación Section - Fondo gris -->
     <section class="section" style="background-color:#efeff081">
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-six-fifths">
                     <h2 class="title is-3">
-                        <img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/3976/3976625.png"> 
-                        Education
+                        <span class="icon" style="margin-right: 10px;">📔</span>
+                        Lecture Notes
                     </h2>
-                    
-                    <div class="education-grid">
-                        <a href="/education/undergraduate" class="education-block">
-                            <div class="education-icon">🎓</div>
-                            <div class="education-title">Undergraduate</div>
-                            <div class="education-subtitle">Engineering | Physics | Mathematics</div>
-                        </a>
+                    <p style="margin-bottom: 2rem; font-size: 1.1rem; color: #4a4a4a;">
+                        <b>Material libre</b> de los cursos e investigaciones que imparto. Documentación técnica y
+                        laboratorios.
+                    </p>
 
-                        <a href="/education/continuing" class="education-block">
-                            <div class="education-icon">📚</div>
-                            <div class="education-title">Continuing Education</div>
-                            <div class="education-subtitle">Bootcamps | Diplomas | Certifications</div>
-                        </a>
-
-                        <a href="/education/postgraduate" class="education-block">
-                            <div class="education-icon">🎯</div>
-                            <div class="education-title">Postgraduate</div>
-                            <div class="education-subtitle">Master’s Degree in Artificial Intelligence</div>
-                        </a>
-
+                    <!-- Lista de cursos en viñetas -->
+                    <div style="text-align: left; max-width: 600px; margin: 0 auto;">
+                        <ul style="list-style-type: none; padding-left: 0;">
+                            <li style="margin-bottom: 1rem;">
+                                🚀 <a href="https://cesarsanco-ai.github.io/ml-foundations/" target="_blank"
+                                    rel="noopener noreferrer">ML Foundations</a>
+                            </li>
+                            <li style="margin-bottom: 1rem;">
+                                🗣️ <a href="https://cesarsanco-ai.github.io/nlp-foundations/" target="_blank"
+                                    rel="noopener noreferrer">NLP Foundations</a>
+                            </li>
+                            <li style="margin-bottom: 1rem;">
+                                📐 <a href="https://cesarsanco-ai.github.io/math-for-ai/" target="_blank"
+                                    rel="noopener noreferrer">Matemática para IA</a>
+                            </li>
+                            <li style="margin-bottom: 1rem;">
+                                🗄️ <a href="https://cesarsanco-ai.github.io/databases-for-ai/" target="_blank"
+                                    rel="noopener noreferrer">Bases de Datos para IA</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
 
     <!-- Footer Section - Fondo blanco -->
     <!-- MODIFICAR ALTURA: Cambia padding en la línea siguiente (actualmente 6rem 2rem) -->
@@ -545,27 +574,29 @@
                         <strong>Let's have a beer 🍺!</strong>
 
                     </h2>
-                    
+
                     <!-- MODIFICAR TAMAÑO ICONO EMAIL: Cambia font-size aquí (actualmente 4rem) -->
                     <div style="margin: 3rem 0;">
                         <a href="https://www.linkedin.com/in/cesar-sanchez-c/" style="text-decoration: none;">
                             <i class="fas fa-envelope" style="font-size: 4rem; color: #363636;"></i>
                         </a>
                     </div>
-                    
+
                     <!-- MODIFICAR ESPACIO ANTES DE ICONOS: Cambia margin-top aquí (actualmente 5rem) -->
                     <!-- MODIFICAR TAMAÑO CÍRCULOS: Cambia width/height en .social-icon (actualmente 45px) -->
                     <div style="margin-top: 5rem; margin-bottom: 2rem;">
-                        <a href="https://www.linkedin.com/in/cesar-sanchez-c/" target="_blank" class="social-icon" style="display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: #000; border-radius: 50%; margin: 0 0.5rem; text-decoration: none; transition: transform 0.2s;">
+                        <a href="https://www.linkedin.com/in/cesar-sanchez-c/" target="_blank" class="social-icon"
+                            style="display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: #000; border-radius: 50%; margin: 0 0.5rem; text-decoration: none; transition: transform 0.2s;">
                             <i class="fab fa-linkedin-in" style="color: white; font-size: 1.2rem;"></i>
                         </a>
-                        <a href="https://github.com/cesarsanco-ai" target="_blank" class="social-icon" style="display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: #000; border-radius: 50%; margin: 0 0.5rem; text-decoration: none; transition: transform 0.2s;">
+                        <a href="https://github.com/cesarsanco-ai" target="_blank" class="social-icon"
+                            style="display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: #000; border-radius: 50%; margin: 0 0.5rem; text-decoration: none; transition: transform 0.2s;">
                             <i class="fab fa-github" style="color: white; font-size: 1.2rem;"></i>
                         </a>
-  
- 
+
+
                     </div>
-                    
+
                     <!-- MODIFICAR TAMAÑO TEXTO COPYRIGHT: Cambia font-size aquí (actualmente 0.95rem) -->
                     <p style="color: #7a7a7a; font-size: 0.95rem; margin-top: 1.5rem;">
                         © 2025 Carlos César Sánchez Coronel | Lima, Perú 🇵🇪
@@ -574,14 +605,15 @@
             </div>
         </div>
     </section>
-    
+
     <style>
-    /* Efecto hover para iconos sociales */
-    .social-icon:hover {
-        transform: translateY(-3px);
-        opacity: 0.8;
-    }
+        /* Efecto hover para iconos sociales */
+        .social-icon:hover {
+            transform: translateY(-3px);
+            opacity: 0.8;
+        }
     </style>
 
 </body>
+
 </html>
