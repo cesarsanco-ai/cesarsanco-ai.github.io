@@ -1,0 +1,119 @@
+
+
+################################################################################
+RAMA 1 — Artificial Intelligence & Machine Learning
+################################################################################
+
+--- AI Technologies ---
+NLP
+LLM
+LangChain
+LangGraph
+Hugging Face
+
+--- Frameworks & Libraries ---
+PyTorch
+TensorFlow
+Keras
+Scikit-learn
+
+--- Model Types ---
+Supervised Models
+Unsupervised Models
+
+
+################################################################################
+RAMA 2 — Data Engineering
+################################################################################
+
+--- Data Processing ---
+Web Scraping
+ETL
+Airflow
+PySpark
+Pandas
+
+--- Data Architectures ---
+Data Warehouses
+Lakehouse
+
+
+################################################################################
+RAMA 3 — Data Analytics & Visualization
+################################################################################
+
+--- (sin subtítulo en la web; una sola lista) ---
+Python
+SQL
+Pandas
+NumPy
+Power BI
+Tableau
+
+
+################################################################################
+RAMA 4 — MLOps & Cloud
+################################################################################
+
+--- Cloud Platforms ---
+AWS
+Azure
+GCP
+Databricks
+Microsoft Fabric
+
+--- Containers & Orchestration ---
+Docker
+Kubernetes
+Terraform
+
+--- Model Management ---
+MLflow
+Grafana
+MLOps
+
+
+################################################################################
+RAMA 5 — Full Stack Development
+################################################################################
+
+--- Frontend ---
+HTML, CSS
+JavaScript
+Tailwind CSS
+React
+
+--- Backend & APIs ---
+Python
+FastAPI
+Flask
+Node.js
+Express
+
+--- Databases ---
+PostgreSQL
+MySQL
+MongoDB
+SQL Server
+Neo4j
+ElasticSearch
+
+
+################################################################################
+RAMA 6 — Automation
+################################################################################
+
+--- (sin subtítulo en la web; una sola lista) ---
+NodeRED
+Power Automate
+N8N
+Scripting
+Web Scraping
+LLM APIs
+C/C++
+Linux
+Github Actions
+
+
+stack:
+python, pytorch, tensorflow, c++, sql sever, PostgreSQL, n8n, linux, langgraph, github actions, aws, databricks, hugging face, airflow, pyspark, power bi, microsoft fabric, docker, kubernetes, terraform,mlflow, grafana, fasapi, nodered, power automate
