@@ -1,11 +1,10 @@
-# César Sanchez-Coronel - Portfolio Personal
+# Cesar Sanchez-Coronel — Portfolio
 
-Portfolio académico y profesional con proyectos de Maestría en IA, Data Science y MLOps.
+Personal site: AI Engineer · Data Engineer · AI Infrastructure & Operations.
 
-🌐 **Website:** https://cesarsanco-ai.github.io
+🌐 **Live:** https://cesarsanco-ai.github.io
 
+## Contact
 
-## Contacto
-
-- GitHub: [@cesarsanco](https://github.com/cesarsanco-ai)
-- LinkedIn: [César Sanco](https://www.linkedin.com/in/cesar-sanchez-c)
+- LinkedIn: [cesar-sanchez-c](https://www.linkedin.com/in/cesar-sanchez-c/)
+- GitHub: [@cesarsanco-ai](https://github.com/cesarsanco-ai)

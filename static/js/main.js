@@ -15,10 +15,11 @@ document.addEventListener('DOMContentLoaded', function () {
     initStackTrackDom();
     initStackShowcase();
     initIndustryShowcase();
+    initSelectedWorkCarousel();
     initHeroTypewriter();
     initWorkBranchDialogs();
     initTeachingPreviewDialogs();
-    initResearchEducationCardTriggers();
+    initSiteNav();
 });
 
 /**
@@ -96,6 +97,27 @@ function initIndustryShowcase() {
     initDriftingStrip('industry-scroll', 'industry-track', '#industry-showcase-main');
 }
 
+function initSelectedWorkCarousel() {
+    var scrollEl = document.getElementById('selected-work-scroll');
+    var root = document.getElementById('selected-work-showcase');
+    if (!scrollEl || !root) return;
+
+    var cards = scrollEl.querySelectorAll('.selected-work-card');
+
+    function scrollByCard(direction) {
+        if (!cards.length) return;
+        var track = scrollEl.querySelector('.selected-work-track');
+        var gap = track ? parseFloat(window.getComputedStyle(track).gap) || 24 : 24;
+        var step = cards[0].offsetWidth + gap;
+        scrollEl.scrollBy({ left: direction * step, behavior: 'smooth' });
+    }
+
+    var leftBtn = root.querySelector('.stack-arrow-left');
+    var rightBtn = root.querySelector('.stack-arrow-right');
+    if (leftBtn) leftBtn.addEventListener('click', function () { scrollByCard(-1); });
+    if (rightBtn) rightBtn.addEventListener('click', function () { scrollByCard(1); });
+}
+
 var DEVICON = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/';
 
 /**
@@ -125,11 +147,14 @@ var STACK_ITEMS = [
     { title: 'Databricks', href: 'https://www.databricks.com/', img: si('databricks', 'FF3621') },
     { title: 'Hugging Face', href: 'https://huggingface.co/', img: si('huggingface', 'FFD21E') },
     { title: 'Apache Airflow', href: 'https://airflow.apache.org/', img: DEVICON + 'apacheairflow/apacheairflow-original.svg' },
+    { title: 'Apache Kafka', href: 'https://kafka.apache.org/', img: DEVICON + 'apachekafka/apachekafka-original.svg' },
     { title: 'PySpark', href: 'https://spark.apache.org/', img: DEVICON + 'apachespark/apachespark-original.svg' },
     { title: 'Power BI', href: 'https://powerbi.microsoft.com/', img: si('powerbi', 'F2C811') },
     { title: 'Microsoft Fabric', href: 'https://www.microsoft.com/microsoft-fabric', img: si('microsoft', '6264A7') },
     { title: 'Docker', href: 'https://www.docker.com/', img: DEVICON + 'docker/docker-original.svg' },
+    { title: 'NVIDIA', href: 'https://www.nvidia.com/', img: si('nvidia', '76B900') },
     { title: 'Kubernetes', href: 'https://kubernetes.io/', img: DEVICON + 'kubernetes/kubernetes-plain.svg' },
+    { title: 'Delta Lake', href: 'https://delta.io/', fa: 'fas fa-database' },
     { title: 'Terraform', href: 'https://www.terraform.io/', img: DEVICON + 'terraform/terraform-original.svg' },
     { title: 'MLflow', href: 'https://mlflow.org/', img: si('mlflow', '0194C4') },
     { title: 'Grafana', href: 'https://grafana.com/', img: si('grafana', 'F46800') },
@@ -194,13 +219,10 @@ function initHeroTypewriter() {
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduceMotion) {
         stage.innerHTML =
-            '<h1 class="title is-1 publication-title">César Sánchez-Coronel</h1>' +
-            '<h2 class="subtitle is-5 publication-awards">Data &amp; AI</h2>' +
+            '<h1 class="title is-1 publication-title">Cesar Sanchez-Coronel</h1>' +
+            '<h2 class="subtitle is-5 publication-awards">AI Engineer · Data Engineer · AI Infrastructure &amp; Operations</h2>' +
             '<div class="is-size-5 publication-authors"><span class="author-block">' +
-            '<a href="#" class="link-hero-ai">Artificial Intelligence Engineer</a></span></div>' +
-            '<div class="is-size-5 publication-authors"><span class="author-block">' +
-            '<b class="hero-uni-accent">&#x25B6; </b>Universidad Nacional de Ingeniería (UNI)</span></div>' +
-            '<div class="is-size-6 publication-authors"><span class="author-block">Lima, Peru 🇵🇪</span></div>';
+            '<span class="link-hero-ai">Agentic AI · Data Platforms · Production AI Ops</span></span></div>';
         indicator.style.display = 'none';
         return;
     }
@@ -214,11 +236,9 @@ function initHeroTypewriter() {
     caretEl.textContent = '▍';
 
     var linesSpec = [
-        { type: 'title', text: 'César Sánchez-Coronel' },
-        { type: 'subtitle', text: 'Data & AI' },
-        { type: 'link', text: 'Artificial Intelligence Engineer' },
-        { type: 'uni', text: 'Universidad Nacional de Ingeniería (UNI)' },
-        { type: 'loc', text: 'Lima, Peru 🇵🇪' }
+        { type: 'title', text: 'Cesar Sanchez-Coronel' },
+        { type: 'subtitle', text: 'AI Engineer · Data Engineer · AI Infrastructure & Operations' },
+        { type: 'tagline', text: 'Agentic AI · Data Platforms · Production AI Ops' }
     ];
 
     var lineIndex = 0;
@@ -259,44 +279,17 @@ function initHeroTypewriter() {
             h2.appendChild(textSpan);
             wrap.appendChild(h2);
             hostEl = h2;
-        } else if (spec.type === 'link') {
+        } else if (spec.type === 'tagline') {
             var row = document.createElement('div');
             row.className = 'is-size-5 publication-authors';
             var ab = document.createElement('span');
             ab.className = 'author-block';
-            var a = document.createElement('a');
-            a.href = '#';
-            a.className = 'link-hero-ai';
             textSpan = document.createElement('span');
-            a.appendChild(textSpan);
-            ab.appendChild(a);
+            textSpan.className = 'link-hero-ai';
+            ab.appendChild(textSpan);
             row.appendChild(ab);
             wrap.appendChild(row);
-            hostEl = a;
-        } else if (spec.type === 'uni') {
-            var row2 = document.createElement('div');
-            row2.className = 'is-size-5 publication-authors';
-            var ab2 = document.createElement('span');
-            ab2.className = 'author-block';
-            var tri = document.createElement('b');
-            tri.className = 'hero-uni-accent';
-            tri.textContent = '\u25b6 ';
-            textSpan = document.createElement('span');
-            ab2.appendChild(tri);
-            ab2.appendChild(textSpan);
-            row2.appendChild(ab2);
-            wrap.appendChild(row2);
-            hostEl = ab2;
-        } else if (spec.type === 'loc') {
-            var row3 = document.createElement('div');
-            row3.className = 'is-size-6 publication-authors';
-            var ab3 = document.createElement('span');
-            ab3.className = 'author-block';
-            textSpan = document.createElement('span');
-            ab3.appendChild(textSpan);
-            row3.appendChild(ab3);
-            wrap.appendChild(row3);
-            hostEl = ab3;
+            hostEl = ab;
         }
 
         stage.appendChild(wrap);
@@ -392,26 +385,61 @@ function initTeachingPreviewDialogs() {
     });
 }
 
-function initResearchEducationCardTriggers() {
-    document.querySelectorAll('.research-education-card[data-teaching-preview-open]').forEach(function (card) {
-        function openFromCard() {
-            var id = card.getAttribute('data-teaching-preview-open');
-            var dlg = id ? document.getElementById(id) : null;
-            if (!dlg || typeof dlg.showModal !== 'function') return;
-            dlg.showModal();
-            var closeBtn = dlg.querySelector('.work-branch-dialog-close');
-            if (closeBtn) closeBtn.focus();
-        }
+function initSiteNav() {
+    var toggle = document.getElementById('siteNavToggle');
+    var links = document.getElementById('siteNavLinks');
+    if (!toggle || !links) return;
 
-        card.addEventListener('click', function (e) {
-            if (e.target.closest('a, button')) return;
-            openFromCard();
+    toggle.addEventListener('click', function () {
+        var open = links.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(open));
+    });
+
+    links.addEventListener('click', function (e) {
+        if (e.target.tagName !== 'A') return;
+        links.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+    });
+
+    var navLinks = links.querySelectorAll('a[href^="#"]');
+    var sections = [];
+
+    navLinks.forEach(function (link) {
+        var id = link.getAttribute('href');
+        if (!id || id === '#') return;
+        var section = document.querySelector(id);
+        if (section) sections.push({ link: link, section: section });
+    });
+
+    function setActiveLink(activeLink) {
+        navLinks.forEach(function (link) {
+            link.classList.toggle('is-active', link === activeLink);
+        });
+    }
+
+    function updateActiveFromScroll() {
+        if (!sections.length) return;
+
+        var offset = (document.querySelector('.site-nav') || {}).offsetHeight || 72;
+        var scrollPos = window.scrollY + offset + 24;
+        var active = sections[0].link;
+
+        sections.forEach(function (entry) {
+            if (entry.section.offsetTop <= scrollPos) {
+                active = entry.link;
+            }
         });
 
-        card.addEventListener('keydown', function (e) {
-            if (e.key !== 'Enter' && e.key !== ' ') return;
-            e.preventDefault();
-            openFromCard();
+        setActiveLink(active);
+    }
+
+    navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+            setActiveLink(link);
         });
     });
+
+    window.addEventListener('scroll', updateActiveFromScroll, { passive: true });
+    window.addEventListener('resize', updateActiveFromScroll);
+    updateActiveFromScroll();
 }
