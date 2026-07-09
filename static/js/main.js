@@ -216,30 +216,28 @@ function initHeroTypewriter() {
     var indicator = document.getElementById('hero-typewriter-indicator');
     if (!stage || !indicator) return;
 
+    var linesSpec = [
+        { id: 'hero-tw-title', text: 'Cesar Sanchez-Coronel', host: 'hero-tw-title' },
+        { id: 'hero-tw-subtitle', text: 'AI Engineer · Data Engineer · AI Infrastructure & Operations', host: 'hero-tw-subtitle' },
+        { id: 'hero-tw-tagline', text: 'Agentic AI · Data Platforms · Production AI Ops', host: 'hero-tw-tagline' }
+    ];
+
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduceMotion) {
-        stage.innerHTML =
-            '<h1 class="title is-1 publication-title">Cesar Sanchez-Coronel</h1>' +
-            '<h2 class="subtitle is-5 publication-awards">AI Engineer · Data Engineer · AI Infrastructure &amp; Operations</h2>' +
-            '<div class="is-size-5 publication-authors"><span class="author-block">' +
-            '<span class="link-hero-ai">Agentic AI · Data Platforms · Production AI Ops</span></span></div>';
+        linesSpec.forEach(function (spec) {
+            var span = document.getElementById(spec.id);
+            if (span) span.textContent = spec.text;
+        });
         indicator.style.display = 'none';
         return;
     }
 
     var charMs = 44;
     var linePauseMs = 320;
-    var cyclePauseMs = 2400;
     var caretEl = document.createElement('span');
     caretEl.className = 'hero-tw-caret';
     caretEl.setAttribute('aria-hidden', 'true');
     caretEl.textContent = '▍';
-
-    var linesSpec = [
-        { type: 'title', text: 'Cesar Sanchez-Coronel' },
-        { type: 'subtitle', text: 'AI Engineer · Data Engineer · AI Infrastructure & Operations' },
-        { type: 'tagline', text: 'Agentic AI · Data Platforms · Production AI Ops' }
-    ];
 
     var lineIndex = 0;
     var charIndex = 0;
@@ -247,52 +245,17 @@ function initHeroTypewriter() {
     var hostEl = null;
     var timer = null;
 
-    function clearStage() {
-        stage.textContent = '';
-        textSpan = null;
-        hostEl = null;
-        lineIndex = 0;
-        charIndex = 0;
-    }
-
     function mountCaret() {
         if (caretEl.parentNode) caretEl.parentNode.removeChild(caretEl);
         if (hostEl) hostEl.appendChild(caretEl);
     }
 
-    function startLine() {
-        var spec = linesSpec[lineIndex];
-        var wrap = document.createElement('div');
-        wrap.className = 'hero-tw-block';
-
-        if (spec.type === 'title') {
-            var h1 = document.createElement('h1');
-            h1.className = 'title is-1 publication-title';
-            textSpan = document.createElement('span');
-            h1.appendChild(textSpan);
-            wrap.appendChild(h1);
-            hostEl = h1;
-        } else if (spec.type === 'subtitle') {
-            var h2 = document.createElement('h2');
-            h2.className = 'subtitle is-5 publication-awards';
-            textSpan = document.createElement('span');
-            h2.appendChild(textSpan);
-            wrap.appendChild(h2);
-            hostEl = h2;
-        } else if (spec.type === 'tagline') {
-            var row = document.createElement('div');
-            row.className = 'is-size-5 publication-authors';
-            var ab = document.createElement('span');
-            ab.className = 'author-block';
-            textSpan = document.createElement('span');
-            textSpan.className = 'link-hero-ai';
-            ab.appendChild(textSpan);
-            row.appendChild(ab);
-            wrap.appendChild(row);
-            hostEl = ab;
-        }
-
-        stage.appendChild(wrap);
+    function activateLine(index) {
+        var spec = linesSpec[index];
+        textSpan = document.getElementById(spec.id);
+        hostEl = textSpan;
+        if (!textSpan) return;
+        textSpan.textContent = '';
         mountCaret();
     }
 
@@ -303,13 +266,13 @@ function initHeroTypewriter() {
 
     function tick() {
         var spec = linesSpec[lineIndex];
-        if (!textSpan) startLine();
+        if (!textSpan) activateLine(lineIndex);
+        if (!textSpan) return;
 
         if (charIndex < spec.text.length) {
             textSpan.textContent = spec.text.slice(0, charIndex + 1);
             charIndex += 1;
             mountCaret();
-            indicator.classList.remove('is-idle');
             schedule(tick, charMs + Math.floor(Math.random() * 18));
             return;
         }
@@ -321,23 +284,13 @@ function initHeroTypewriter() {
             textSpan = null;
             hostEl = null;
             schedule(function () {
-                startLine();
+                activateLine(lineIndex);
                 tick();
             }, linePauseMs);
             return;
         }
 
-        indicator.classList.add('is-idle');
-        schedule(function () {
-            indicator.classList.remove('is-idle');
-            clearStage();
-            lineIndex = 0;
-            charIndex = 0;
-            textSpan = null;
-            hostEl = null;
-            startLine();
-            tick();
-        }, cyclePauseMs);
+        if (caretEl.parentNode) caretEl.parentNode.removeChild(caretEl);
     }
 
     tick();

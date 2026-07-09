@@ -1,4 +1,4 @@
-/* Expandable cards (template; use .expandable-card on markup if needed) */
+/* Expandable cards */
 .expandable-card .card-text-container {
     max-height: 200px;
     overflow-y: hidden;
@@ -302,12 +302,55 @@
 
 .hero-typewriter-root {
     position: relative;
-    min-height: 9.5rem;
     text-align: center;
 }
 
+.hero-typewriter-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 6.25rem;
+}
+
+.hero-tw-block {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 0.12rem;
+}
+
+.hero-tw-block:last-child {
+    margin-bottom: 0;
+}
+
+.hero-tw-block--title {
+    min-height: 2.65rem;
+}
+
+.hero-tw-block--subtitle {
+    min-height: 1.45rem;
+}
+
+.hero-tw-block--tagline {
+    min-height: 1.35rem;
+}
+
+.hero-tw-block--title .publication-title {
+    line-height: 1.12;
+    margin-bottom: 0;
+}
+
+.hero-tw-block h1,
+.hero-tw-block h2,
+.hero-tw-block .publication-authors {
+    margin: 0;
+    width: 100%;
+}
+
 .hero-industries-line {
-    margin: 0.65rem 0 0.5rem;
+    margin: 0.35rem 0 0.4rem;
     text-align: center;
 }
 
@@ -328,23 +371,17 @@
     text-align: center;
 }
 
-.hero-typewriter-stage {
-    min-height: 6.75rem;
-}
-
 .hero-typewriter-stage .subtitle.publication-awards {
     font-size: clamp(0.92rem, 2.6vw, 1.2rem);
     line-height: 1.4;
     max-width: 38rem;
     margin-left: auto;
     margin-right: auto;
+    color: #4a4a4a;
+    font-weight: 500;
 }
 
-.hero-typewriter-indicator {
-    display: none;
-}
-
-.hero-typewriter-stage .subtitle.publication-awards {
+.hero-tw-caret {
     display: inline-block;
     margin-left: 1px;
     color: #3273dc;
@@ -358,12 +395,8 @@
     }
 }
 
-.hero-typewriter-stage .hero-tw-block {
-    margin-bottom: 0.35rem;
-}
-
-.hero-typewriter-stage .hero-tw-block:last-child {
-    margin-bottom: 0;
+.hero-typewriter-indicator {
+    display: none;
 }
 
 .stack-logo--fa {
@@ -859,6 +892,18 @@
     .hero-industries-badge {
         padding: 0.45rem 0.9rem;
         font-size: 0.84rem;
+    }
+
+    .hero-typewriter-stage {
+        min-height: 7.75rem;
+    }
+
+    .hero-tw-block--title {
+        min-height: 3.55rem;
+    }
+
+    .hero-tw-block--subtitle {
+        min-height: 2.75rem;
     }
 
     .hero-location-line {
@@ -1695,6 +1740,15 @@ html {
 }
 
 @media (max-width: 900px) {
+    .site-nav__inner {
+        padding-left: calc(1.85rem + env(safe-area-inset-left, 0px));
+        padding-right: calc(1rem + env(safe-area-inset-right, 0px));
+    }
+
+    .site-nav__brand {
+        margin-left: 0.65rem;
+    }
+
     .site-nav__links {
         position: absolute;
         top: 100%;
