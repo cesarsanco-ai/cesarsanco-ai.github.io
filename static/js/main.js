@@ -164,15 +164,14 @@ var STACK_ITEMS = [
 ];
 
 function buildStackLogoEl(item, duplicate) {
-    var a = document.createElement('a');
-    a.className = item.fa ? 'stack-logo stack-logo--fa' : 'stack-logo';
-    a.href = item.href;
-    a.target = '_blank';
-    a.rel = 'noopener noreferrer';
-    a.title = item.title;
+    var el = document.createElement('span');
+    el.className = item.fa ? 'stack-logo stack-logo--fa' : 'stack-logo';
+    el.title = item.title;
     if (duplicate) {
-        a.setAttribute('aria-hidden', 'true');
-        a.setAttribute('tabindex', '-1');
+        el.setAttribute('aria-hidden', 'true');
+    } else {
+        el.setAttribute('role', 'img');
+        el.setAttribute('aria-label', item.title);
     }
     if (item.img) {
         var img = document.createElement('img');
@@ -186,17 +185,17 @@ function buildStackLogoEl(item, duplicate) {
             var fallback = document.createElement('i');
             fallback.className = 'fas fa-cube';
             fallback.setAttribute('aria-hidden', 'true');
-            a.classList.add('stack-logo--fa');
-            a.appendChild(fallback);
+            el.classList.add('stack-logo--fa');
+            el.appendChild(fallback);
         });
-        a.appendChild(img);
+        el.appendChild(img);
     } else if (item.fa) {
         var icon = document.createElement('i');
         icon.className = item.fa;
         icon.setAttribute('aria-hidden', 'true');
-        a.appendChild(icon);
+        el.appendChild(icon);
     }
-    return a;
+    return el;
 }
 
 function initStackTrackDom() {
